@@ -16,6 +16,7 @@
             integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
             crossorigin="anonymous"
         />
+        <link rel="stylesheet" href="assets/css/form.css">
     </head>
 
     <body>
@@ -23,8 +24,10 @@
             <!-- place navbar here -->
         </header>
         <main>
-            <h1 th:text="${titulo}"></h1>
-            <form th:action="@{/form}" th:object="${cliente}" method="post">
+            <section id="forms" class="contact">
+            
+                <h1 th:text="${titulo}"></h1>
+              <form th:action="@{/form}" th:object="${cliente}" method="post">
                 <table>
                     <tr>
                         <td>Cédula</td>
@@ -45,11 +48,14 @@
                     </tr>
                     <tr>
                         <td>Fecha</td>
-                        <td><input type="submit"  /></td>
+                        <td><input type="submit" class="btn "></td>
                     </tr>
+                    
                 </table>
                 <input type="hidden" th:field="*{id}">
             </form>
+            </section>
+            
         </main>
         <footer>
             <!-- place footer here -->
