@@ -8,12 +8,14 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-@Entity
+import jakarta.persistence.Table;
+@Entity 
+@Table(name= "Mascota")
 public class Mascota implements Serializable {
   
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String Id;
+    private String IdMascota;
     private String Nombre;
     private String raza;
     private int edad;
@@ -24,8 +26,12 @@ public class Mascota implements Serializable {
     @JoinColumn(name = "Clientes_cedula")
     private cliente cliente;
 
-    public void setId(String id) {
-        Id = id;
+  
+    public String getIdMascota() {
+        return IdMascota;
+    }
+    public void setIdMascota(String idMascota) {
+        IdMascota = idMascota;
     }
     public String getNombre() {
         return Nombre;
